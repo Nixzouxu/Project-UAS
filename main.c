@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 
+// fungsi untuk clear terminal
+void clear_terminal()
+    {printf("\e[1;1H\e[2J");} 
+
 int main(int argc, char *argv[]){
 
     if (argc != 3)
