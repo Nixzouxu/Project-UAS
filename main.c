@@ -4,6 +4,17 @@
 #include <ctype.h>
 #include <unistd.h>
 
+// ANSI Color Codes for Styling
+#define RESET "\033[0m"
+#define GREEN "\033[1;32m"
+#define RED "\033[1;31m"
+#define CYAN "\033[1;36m"
+#define YELLOW "\033[1;33m"
+#define BLUE "\033[1;34m"
+#define MAGENTA "\033[1;35m"
+#define BOLD "\033[1m"
+
+
 // function to clear terminal
 void clear_terminal(){
     #ifdef _WIN32
@@ -12,27 +23,36 @@ void clear_terminal(){
         system("clear"); // clear terminal for linux/unix
     #endif
 }
+// function to display header
+void display_header(const char *subtitle){
+    clear_terminal();
+    printf(BOLD CYAN "************************************\n" RESET);
+    printf(BOLD CYAN "*        WHO WANTS TO BE A         *\n" RESET);
+    printf(BOLD CYAN "*           MILLIONAIRE            *\n" RESET);
+    printf(BOLD CYAN "************************************\n" RESET);
+    if (subtitle != NULL) {
+        printf(YELLOW BOLD "%s\n\n" RESET, subtitle);
+    }
+}
 // Function to display main menu
 void display_main_menu() {
-    printf("\n  WELCOME TO QUIZ GAME    \n");
-    printf("WHO WANTS TO BE A MILLIONARE\n\n");
-    printf("Select Your Option\n");
-    printf("1. Start Quiz\n");
-    printf("2. Rules\n");
-    printf("3. Info\n");
-    printf("4. Exit\n");
-    printf("\nEnter your choice: ");
+    display_header("CHOOSE SOME OPTION BELOW");
+    printf("1. " BLUE "Start Quiz" RESET "\n");
+    printf("2. " GREEN "Rules" RESET "\n");
+    printf("3. " MAGENTA "Info" RESET "\n");
+    printf("4. " RED "Exit" RESET "\n");
+    printf("\n" BOLD "Enter your choice: " RESET);
 }
 
 void showRules() {
     clear_terminal();
-    printf(" ======================================== \n");
-    printf("                  Rules                   \n");
-    printf(" ======================================== \n");
-    printf("1. The quiz contains 5 multiple-choice questions.\n");
-    printf("2. Each correct answer gives you 20 points.\n");
-    printf("3. You must score as high as possible to win.\n");
-    printf("4. Enjoy the game and give your best!\n");
+    display_header("RULES");
+    printf(GREEN "***************************************************\n" RESET);
+    printf(BLUE    "1. The quiz contains 5 multiple-choice questions.\n" RESET);
+    printf(YELLOW  "2. Each correct answer gives you 20 points.      \n" RESET);
+    printf(MAGENTA "3. You must score as high as possible to win.    \n" RESET);
+    printf(RED     "4. Enjoy the game and give your best!            \n" RESET);
+    printf(GREEN "***************************************************\n" RESET);
     printf("\nPress Enter to return to the main menu...");
     getchar(); getchar(); // Pause hingga pengguna menekan Enter
     clear_terminal();
@@ -40,12 +60,12 @@ void showRules() {
 
 void showInfo() {
     clear_terminal();
-    printf(" ======================================== \n");
-    printf("                  Info                    \n");
-    printf(" ======================================== \n");
-    printf("This quiz game is developed in C.\n");
-    printf("It demonstrates the use of functions, file handling,\n");
-    printf("and user interactions for a simple text-based game.\n");
+    display_header("INFO");
+    printf(MAGENTA "*******************************************************\n" RESET);
+    printf(CYAN    "1. This quiz game is developed in C.                   \n" RESET);
+    printf(YELLOW  "2. It demonstrates the use of functions, file handling,\n" RESET);
+    printf(BLUE    "and user interactions for a simple text-based game.    \n" RESET);
+    printf(MAGENTA "*******************************************************\n" RESET);
     printf("\nPress Enter to return to the main menu...");
     getchar(); getchar(); // Pause hingga pengguna menekan Enter
     clear_terminal();
@@ -53,6 +73,11 @@ void showInfo() {
 
 // function to start Quiz
 void start_quiz(){
+
+    display_header("QUIZ TIME!");
+
+    printf(BOLD "Starting the quiz in 5 seconds....\n" RESET);
+    sleep(5);
     int score = 0;
     char answer;
 
@@ -74,7 +99,7 @@ void start_quiz(){
     scanf(" %c", &answer);
     if (answer == 'C' || answer == 'c') score++;
 
-    // Pertanyaan 3 
+    // Pertanyaan 3 - Soal Matematika Menjebak
     printf("\n3. Siapa penulis buku Six of Crows\n");
     printf("A. Leigh Bardugo\nB. Arthur Conan Doyle\nC. Lewis Carroll\nD. Emily Bronte\n");
     printf("Your Answer (A/B/C/D): ");
@@ -100,7 +125,7 @@ void start_quiz(){
     clear_terminal();
     printf("\n**************************************\n");
     printf("              QUIZ OVER!                   \n");
-    printf("*     Your Total Score: %d from 5        *\n", score);
+    printf("*    Your Total Score: %d from 5        *\n", score);
     printf("       Thank you for playing <3         \n");
     printf("****************************************\n");
     printf("\nPress Enter to return to the main menu...\n");
