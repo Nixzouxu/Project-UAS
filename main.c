@@ -129,7 +129,6 @@ void start_quiz(){
     printf("****************************************\n");
     printf("\nPress Enter to return to the main menu...\n");
     getchar();
-    clear_terminal();
 }
 int main(int argc, char *argv[]){
 
