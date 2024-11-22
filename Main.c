@@ -130,7 +130,6 @@ void start_quiz(){
     printf(BOLD GREEN "%d/5\n" RESET, score);
     printf(MAGENTA "\nThank you for playing! <3\n" RESET);
     printf("\nPress Enter to return to the main menu...");
-
     // Tambahkan getchar untuk memastikan buffer kosong
     getchar(); 
     getchar(); // Tunggu pengguna menekan Enter sebelum kembali
@@ -173,11 +172,11 @@ int main(int argc, char *argv[]){
     strcpy(password, string[1]);
 
     if ((strcmp(usernameInput, username) == 0) && (strcmp( passwordInput ,password) == 0)) {
-        printf("Horee dah bisa login bejir\n");
+        printf("Login berhasil. tekan enter untuk melanjutkan.\n");
         getchar(); // pause sebelum masuk menu
  } else
     {
-        printf("Ga bisa lah lek.. apalah");
+        printf("Gagal login. Coba lagi");
         return EXIT_FAILURE;
     }
     int choice;
