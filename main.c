@@ -122,15 +122,14 @@ void start_quiz(){
 
 
     // Display the final Score
-    clear_terminal();
     printf("\n**************************************\n");
-    printf("              QUIZ OVER!                   \n");
-    printf("*    Your Total Score: %d from 5        *\n", score);
-    printf("       Thank you for playing <3         \n");
+    printf(BOLD"              QUIZ OVER!            \n" RESET);
+    printf(BOLD"*   Your Total Score is:"YELLOW"%d from 5*\n"RESET, score);
+    printf("\n"CYAN     "Thank you for playing <3         \n"RESET);
     printf("****************************************\n");
     printf("\nPress Enter to return to the main menu...\n");
     getchar();
-    
+    clear_terminal();
 }
 int main(int argc, char *argv[]){
 
@@ -196,10 +195,10 @@ int main(int argc, char *argv[]){
                 showInfo();
                 break;
             case 4:
-                printf("Makasih udah main <3\n");
+                printf( BOLD MAGENTA "Makasih udah main <3\n" RESET);
                 return EXIT_SUCCESS;
             default:
-                printf("Pilihan tidak valid. Coba lagi.\n");
+                printf(RED BOLD"Pilihan tidak valid. Coba lagi.\n"RESET);
                 getchar(); // menangkap newline
                 getchar(); // pause sebelum kembali ke menu
         }
