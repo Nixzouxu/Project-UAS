@@ -74,7 +74,7 @@ void start_quiz(){
     scanf(" %c", &answer);
     if (answer == 'C' || answer == 'c') score++;
 
-    // Pertanyaan 3 - Soal Matematika Menjebak
+    // Pertanyaan 3 
     printf("\n3. Siapa penulis buku Six of Crows\n");
     printf("A. Leigh Bardugo\nB. Arthur Conan Doyle\nC. Lewis Carroll\nD. Emily Bronte\n");
     printf("Your Answer (A/B/C/D): ");
