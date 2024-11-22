@@ -121,14 +121,19 @@ void start_quiz(){
     if (answer == 'A' || answer == 'a') score++;
 
 
-    // Display the final Score
-    printf("\n**************************************\n");
-    printf(BOLD"              QUIZ OVER!            \n" RESET);
-    printf(BOLD"*   Your Total Score is:"YELLOW"%d from 5*\n"RESET, score);
-    printf("\n"CYAN     "Thank you for playing <3         \n"RESET);
-    printf("****************************************\n");
-    printf("\nPress Enter to return to the main menu...\n");
-    getchar();
+   // Display final score
+    clear_terminal();
+    printf(GREEN BOLD "************************************\n" RESET);
+    printf(BOLD CYAN "           QUIZ OVER!               \n" RESET);
+    printf(GREEN BOLD "************************************\n" RESET);
+    printf(YELLOW "Your total score is: " RESET);
+    printf(BOLD GREEN "%d/5\n" RESET, score);
+    printf(MAGENTA "\nThank you for playing! <3\n" RESET);
+    printf("\nPress Enter to return to the main menu...");
+
+    // Tambahkan getchar untuk memastikan buffer kosong
+    getchar(); 
+    getchar(); // Tunggu pengguna menekan Enter sebelum kembali
 }
 int main(int argc, char *argv[]){
 
