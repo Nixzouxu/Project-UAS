@@ -11,7 +11,7 @@ Cut Mutia Rahmah - 24081007010062
 
 Gunakan Username & Password yang telah tersimpan di file Login.bin untuk masuk ke dalam game quiz nya
 dengan cara setelah di compile input command :
-./ namafileutama.c <username> <password>
+./namafileutama.c <username> <password>
 
 Username = Nxozu
 Password = Ravensky
