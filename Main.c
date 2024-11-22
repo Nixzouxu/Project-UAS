@@ -90,7 +90,7 @@ void start_quiz(){
     printf("A. Tere Liye\nB. Eka Kurniawan\nC. Angga Suherta\nD. Andrea Hirata\n");
     printf("Your Answer (A/B/C/D): ");
     scanf(" %c", &answer);
-    if (answer == 'D' || answer == 'D') score++;
+    if (answer == 'D' || answer == 'd') score++;
 
     // Pertanyaan 2
     printf("\n2. Siapa Penulis buku Harry Potter\n");
