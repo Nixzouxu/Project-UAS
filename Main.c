@@ -49,7 +49,7 @@ void showRules() {
     display_header("RULES");
     printf(GREEN "***************************************************\n" RESET);
     printf(BLUE    "1. The quiz contains 5 multiple-choice questions.\n" RESET);
-    printf(YELLOW  "2. Each correct answer gives you 20 points.      \n" RESET);
+    printf(YELLOW  "2. Each correct answer gives you 1 points.      \n" RESET);
     printf(MAGENTA "3. You must score as high as possible to win.    \n" RESET);
     printf(RED     "4. Enjoy the game and give your best!            \n" RESET);
     printf(GREEN "***************************************************\n" RESET);
